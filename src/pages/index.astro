@@ -1,0 +1,95 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CaseGrid from '../components/site/CaseGrid.astro';
+import HomeMedia from '../components/site/HomeMedia.astro';
+
+const features = [
+	{ name: '消息推送', en: 'Push Notification', img: '/site/static/img/push.png', href: '/products/push/' },
+	{ name: '实时消息', en: 'Realtime Messaging', img: '/site/static/img/msg.png', href: '/products/realtime/' },
+	{ name: '实时统计', en: 'Analytics', img: '/site/static/img/stat.png', href: '/products/analytics/' },
+	{ name: '实时在线', en: 'Presence', img: '/site/static/img/user.png', href: '/products/presence/' },
+	{ name: 'REST API', en: '', img: '/site/static/img/api.png', href: '/docs/restful_api_api_manual/' },
+];
+---
+
+<SiteLayout title="云巴 Yunba - App、Web、物联网实时通讯云服务">
+	<!-- Hero -->
+	<section class="hero">
+		<div class="container hero-inner">
+			<div class="hero-text">
+				<h1>App、Web、物联网实时通讯云服务</h1>
+				<p>专注于为需要实时数据交换的产品提供完美解决方案。</p>
+				<p>支持包括手机、Web、智能设备的几乎所有平台。</p>
+				<a href="/docs/" class="btn btn-primary">查看文档</a>
+				<a href="/docs/product_kb_yunba_quick_start/" class="btn btn-outline" style="margin-left:10px;"
+					>快速入门</a
+				>
+			</div>
+			<div class="hero-img">
+				<img src="/site/static/img/home.png" alt="云巴跨平台实时通信系统" />
+			</div>
+		</div>
+	</section>
+
+	<!-- 介绍 -->
+	<section class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>云巴<sup>TM</sup>助你打造最佳实时应用</h2>
+			</div>
+			<div style="text-align:center;color:#666;">
+				<p style="margin:2px 0;">基于云巴的实时消息系统，</p>
+				<p style="margin:2px 0;">你可以轻松实现跨手机、浏览器、智能设备的实时通讯，</p>
+				<p style="margin:2px 0;">开发、部署大规模实时应用。</p>
+			</div>
+			<div style="text-align:center;margin-top:28px;">
+				<img src="/site/static/img/introduce.jpg" alt="云巴实时应用" style="max-width:860px;" />
+			</div>
+		</div>
+	</section>
+
+	<!-- 产品主要功能 -->
+	<section class="section soft">
+		<div class="container">
+			<div class="section-title">
+				<h2>产品主要功能</h2>
+				<div class="blue-line"></div>
+			</div>
+			<div class="feature-grid">
+				{features.map((f) => (
+					<a class="feature-item" href={f.href}>
+						<img src={f.img} alt={f.name} loading="lazy" />
+						<h5>{f.name}</h5>
+						{f.en && <p>{f.en}</p>}
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- 案例 -->
+	<section class="section">
+		<div class="container">
+			<div class="section-title">
+				<h2>云巴示例和案例</h2>
+				<div class="blue-line"></div>
+				<p>我们为移动应用以及智能设备开发提供后端云服务，助你打造最佳实时应用</p>
+			</div>
+			<CaseGrid />
+		</div>
+	</section>
+
+	<!-- 媒体报道 -->
+	<section class="section soft">
+		<div class="container">
+			<div class="section-title">
+				<h2>媒体报道</h2>
+				<div class="blue-line"></div>
+			</div>
+			<HomeMedia />
+			<div style="text-align:center;margin-top:32px;">
+				<a href="/media-reports/" class="btn btn-primary">查看更多</a>
+			</div>
+		</div>
+	</section>
+</SiteLayout>

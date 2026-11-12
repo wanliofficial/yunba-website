@@ -1,0 +1,20 @@
+---
+interface Props {
+	active: 'about' | 'contact' | 'careers' | 'media';
+}
+const { active } = Astro.props;
+const links = [
+	{ key: 'about', name: '关于我们', href: '/company/' },
+	{ key: 'contact', name: '联系我们', href: '/contact/' },
+	{ key: 'careers', name: '人才招聘', href: '/careers/' },
+	{ key: 'media', name: '媒体报道', href: '/media-reports/' },
+];
+---
+
+<aside class="company-side">
+	<ul>
+		{links.map((l) => (
+			<li><a class:list={[{ active: l.key === active }]} href={l.href}>{l.name}</a></li>
+		))}
+	</ul>
+</aside>

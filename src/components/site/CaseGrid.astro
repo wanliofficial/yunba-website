@@ -1,0 +1,13 @@
+---
+import { cases } from '../../data/site';
+---
+
+<div class="case-grid">
+	{cases.map((c) => (
+		<a class="case-card" href={c.href}>
+			<h5>{c.name}</h5>
+			<img src={c.img} alt={c.name} loading="lazy" />
+			{c.desc.map((d) => <p>{d}</p>)}
+		</a>
+	))}
+</div>

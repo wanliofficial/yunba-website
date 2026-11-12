@@ -1,0 +1,57 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import CompanySide from '../../components/site/CompanySide.astro';
+
+const services = [
+	{ t: '消息推送', d: '提供一对多、一对一的消息推送服务，能够保证消息百分百送达，通信延时极低。' },
+	{ t: '实时消息', d: '提供不同平台之间的设备通信功能，并针对低功耗的智能设备做了特别的优化，达到了海量设备秒内延时的高性能。' },
+	{
+		t: '实时统计',
+		d: '提供了活跃用户数量、在线用户数量等统计数据，并能够实时绘制动态图标，秒级更新。此外，开发者还可以根据原始数据接口自行整合，得出想要的实时数据的组合。',
+	},
+	{
+		t: '实时在线',
+		d: '帮助开发者跟踪用户的上下线行为、探测设备的连接状态，实时地反映出用户、设备的在线数量。海量用户的连接状态都能够实时监测，确保万无一失。',
+	},
+];
+---
+
+<SiteLayout title="关于我们_云巴 Yunba - App、Web、物联网实时通讯云服务" active="company">
+	<section class="page-hero">
+		<div class="container">
+			<h1>关于我们</h1>
+			<p>About us</p>
+		</div>
+	</section>
+
+	<div class="container company-layout">
+		<CompanySide active="about" />
+		<div class="company-main">
+			<p>云巴隶属于深圳市微智云科技有限公司</p>
+			<p>我们是一支专注于为移动应用和智能设备开发提供后端云服务的团队。</p>
+
+			<h3>关于云巴</h3>
+			<p>「云巴」这个名字源于 Cloud Bus，意思是「云总线」，谐音为「云巴」。</p>
+			<p>
+				云巴提供了以下几个国内首创的服务，并开放了几乎所有主流平台的不同语言的 SDK，包括 C、Embedded C、iOS、Android、JavaScript、C#
+				等等，并支持 RESTful API，支持 Socket.IO 协议。
+			</p>
+			<div class="point-list cols-1" style="max-width:100%;">
+				{services.map((s) => (
+					<div class="point"><strong>{s.t}</strong>：{s.d}</div>
+				))}
+			</div>
+
+			<h3>云巴团队</h3>
+			<p>团队主要由来自华为、Oracle 等公司的资深技术人员组成。</p>
+			<p>曾创意并主导开发了国内最早的第三方推送服务产品，目前在为几万开发者、几亿终端提供推送服务。</p>
+
+			<p style="color:#999;font-size:13px;">（原页配图：公司团队照片，未留存于归档）</p>
+
+			<div class="cta-row">
+				<a href="/docs/" class="btn btn-primary">查看文档中心</a>
+				<a href="/contact/" class="btn btn-outline">联系我们</a>
+			</div>
+		</div>
+	</div>
+</SiteLayout>

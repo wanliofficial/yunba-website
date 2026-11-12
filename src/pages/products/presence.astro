@@ -1,0 +1,32 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductHero from '../../components/site/ProductHero.astro';
+import SupportedPlatforms from '../../components/site/SupportedPlatforms.astro';
+---
+
+<SiteLayout title="实时在线_云巴 Yunba - App、Web、物联网实时通讯云服务" active="products">
+	<ProductHero active="presence" />
+
+	<section class="section">
+		<div class="container">
+			<div class="product-feature">
+				<div class="pf-img">
+					<img src="/site/static/img/feature-4.png" alt="实时在线" />
+				</div>
+				<div class="pf-text">
+					<h2>探测用户打开/关闭你的应用，探测设备是否在线</h2>
+					<p>跟踪用户上线和下线</p>
+					<p>探测设备链接状态</p>
+					<p>方便实现聊天室、游戏大厅、设备间通讯</p>
+					<div class="point-list">
+						<div class="point"><strong>在线人数</strong>：实时监控用户、设备在线人数</div>
+						<div class="point"><strong>海量用户支持能力</strong>：基于 Yunba 消息系统</div>
+						<div class="point"><strong>上线、下线通知</strong>：实时监控所有客户端连接状态</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<SupportedPlatforms />
+</SiteLayout>

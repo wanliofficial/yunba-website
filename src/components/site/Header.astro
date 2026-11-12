@@ -1,0 +1,78 @@
+---
+interface Props {
+	active?: string;
+}
+const { active = '' } = Astro.props;
+---
+
+<div class="site-header">
+	<div class="container site-header-inner">
+		<a href="/" class="site-logo" aria-label="云巴首页">
+			<img src="/site/static/img/logo3.png" alt="Yunba.io 云巴" />
+		</a>
+		<nav class="site-nav">
+			<a href="https://www.iotsolutionshub.com/" target="_blank" rel="noopener">物联网方案</a>
+			<div class="dropdown">
+				<a href="/docs/product_kb_yunba_quick_start/">快速入门 <span class="caret">▾</span></a>
+				<div class="dropdown-menu">
+					<a href="/docs/product_kb_yunba_quick_start/">快速入门</a>
+					<a href="https://github.com/yunbademo/yunba-chatroom" target="_blank" rel="noopener">聊天室</a>
+					<a href="https://yunbademo.github.io/yunba-live-video/" target="_blank" rel="noopener"
+						>直播弹幕 Demo</a
+					>
+				</div>
+			</div>
+			<a href="/products/push/" class:list={[{ active: active === 'products' }]}>产品介绍</a>
+			<a href="/docs/product_kb_pricing_details/">价格</a>
+			<div class="dropdown">
+				<a href="/downloads/" class:list={[{ active: active === 'downloads' || active === 'docs' }]}
+					>开发者资源 <span class="caret">▾</span></a
+				>
+				<div class="dropdown-menu">
+					<a href="/downloads/">SDK 下载</a>
+					<a href="/docs/">文档中心</a>
+				</div>
+			</div>
+			<a href="/usercases/" class:list={[{ active: active === 'usercases' }]}>用户案例</a>
+			<a href="https://blog.yunba.io/" target="_blank" rel="noopener">博客</a>
+		</nav>
+	</div>
+</div>
+
+<style>
+	.dropdown {
+		position: relative;
+	}
+	.caret {
+		font-size: 11px;
+		color: #999;
+	}
+	.dropdown-menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 150px;
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+		padding: 6px;
+		display: none;
+		z-index: 20;
+	}
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
+	.dropdown-menu a {
+		display: block;
+		padding: 8px 12px;
+		color: var(--text);
+		border-radius: 3px;
+		white-space: nowrap;
+	}
+	.dropdown-menu a:hover {
+		background: var(--brand-soft);
+		color: var(--brand);
+		text-decoration: none;
+	}
+</style>

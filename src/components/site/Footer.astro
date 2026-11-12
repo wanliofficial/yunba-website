@@ -1,0 +1,79 @@
+---
+const products = [
+	{ name: '消息推送', href: '/products/push/' },
+	{ name: '实时消息', href: '/products/realtime/' },
+	{ name: '实时统计', href: '/products/analytics/' },
+	{ name: '实时在线', href: '/products/presence/' },
+];
+const company = [
+	{ name: '关于我们', href: '/company/' },
+	{ name: '联系我们', href: '/contact/' },
+	{ name: '人才招聘', href: '/careers/' },
+	{ name: '媒体报道', href: '/media-reports/' },
+];
+---
+
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-cols">
+			<div class="footer-col">
+				<h4><a href="/products/push/">产品</a></h4>
+				<ul>
+					{products.map((p) => (
+						<li><a href={p.href}>{p.name}</a></li>
+					))}
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4><a href="/docs/product_kb_pricing_details/">价格</a></h4>
+			</div>
+			<div class="footer-col">
+				<h4><a href="/downloads/">开发者资源</a></h4>
+				<ul>
+					<li><a href="/downloads/">SDK下载</a></li>
+					<li><a href="/docs/">文档中心</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4><a href="/company/">公司</a></h4>
+				<ul>
+					{company.map((c) => (
+						<li><a href={c.href}>{c.name}</a></li>
+					))}
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4><a href="https://blog.yunba.io/" target="_blank" rel="noopener">博客</a></h4>
+				<ul>
+					<li><span style="color:#888;font-size:12px;">QQ 群 453727761</span></li>
+					<li>
+						<img
+							class="barcode"
+							src="/site/static/img/qq-group-barcode_new.jpg"
+							alt="QQ 群二维码"
+							loading="lazy"
+						/>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col footer-brand">
+				<a href="/"><img src="/site/static/img/yunba-logo.png" alt="Yunba 云巴" /></a>
+				<ul>
+					<li>2013-2023 深圳市微智云科技有限公司</li>
+					<li>深圳市南山区</li>
+					<li><a href="/docs/readme/">Terms &amp; Conditions</a></li>
+					<li><a href="/docs/readme/">Privacy Policy</a></li>
+					<li>
+						<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"
+							>粤ICP备14035779号</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>© 2013-2023 深圳市微智云科技有限公司 · 云巴 Yunba</span>
+			<span>本站为 yunba.io 官网归档复现版本</span>
+		</div>
+	</div>
+</footer>

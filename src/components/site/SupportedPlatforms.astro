@@ -1,0 +1,26 @@
+---
+// 原站使用平台图标；部分图标未留存于归档，统一改用文字徽标保证版式整齐
+const platforms = [
+	{ name: 'iOS', href: '/docs/ios_sdk_quick_start/' },
+	{ name: 'Android', href: '/docs/android_sdk_api_manual/' },
+	{ name: 'JavaScript', href: '/docs/js_sdk_api_manual/' },
+	{ name: '.net', href: '/docs/csharp_demo_quick_start/' },
+	{ name: 'PHP', href: '/docs/php_demo_quick_start/' },
+];
+---
+
+<section class="section soft">
+	<div class="container">
+		<div class="section-title">
+			<h2>支持几乎所有主流平台</h2>
+			<p>通过 MQTT, WebSocket, Socket.io 协议，<br />支持包括 Android/iOS 手机， PC, Mac, 浏览器， 智能设备， 智能家居</p>
+		</div>
+		<div class="platform-row">
+			{platforms.map((p) => (
+				<a class="platform-item" href={p.href}>
+					<span class="platform-badge">{p.name}</span>
+				</a>
+			))}
+		</div>
+	</div>
+</section>

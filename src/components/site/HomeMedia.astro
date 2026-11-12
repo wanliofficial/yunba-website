@@ -1,0 +1,18 @@
+---
+import { homeMedia } from '../../data/site';
+---
+
+<div class="media-grid">
+	{homeMedia.map((m) => (
+		<div class="media-item">
+			<div class="media-logo">
+				<a href={m.url} target="_blank" rel="noopener nofollow">
+					{m.logo ? <img src={m.logo} alt={m.media} loading="lazy" /> : <span class="media-badge">{m.media}</span>}
+				</a>
+			</div>
+			<h3><a href={m.url} target="_blank" rel="noopener nofollow">{m.title}</a></h3>
+			<p>{m.desc}</p>
+			<time>{m.date}</time>
+		</div>
+	))}
+</div>

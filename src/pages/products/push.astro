@@ -1,0 +1,37 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductHero from '../../components/site/ProductHero.astro';
+import SupportedPlatforms from '../../components/site/SupportedPlatforms.astro';
+---
+
+<SiteLayout title="消息推送_云巴 Yunba - App、Web、物联网实时通讯云服务" active="products">
+	<ProductHero active="push" />
+
+	<section class="section">
+		<div class="container">
+			<div class="product-feature">
+				<div class="pf-img">
+					<img src="/site/static/img/feature-1.png" alt="消息推送" />
+				</div>
+				<div class="pf-text">
+					<h2>针对移动互联网优化，极低延迟，确保送达</h2>
+					<p>实时推送消息到任意设备</p>
+					<p>快速的给上百万用户推送消息，或者单台设备一对一</p>
+					<p><strong>推送实时消息</strong></p>
+					<p>对不在线用户，保存离线消息，下次用户上线时，确保消息送达</p>
+					<p>支持 Android 后台保持长连接</p>
+					<p>集成 iOS APNs</p>
+					<div class="point-list">
+						<div class="point"><strong>广播 (一对多)</strong>：发送实时消息到海量用户</div>
+						<div class="point"><strong>服务器端保存消息</strong>：服务器保存每一条消息，对于不在线的用户，下次上线时确保消息被送达</div>
+						<div class="point"><strong>单播 (一对一)</strong>：通过特定 Topic</div>
+						<div class="point"><strong>多平台支持</strong>：支持 C、Embedded C、iOS、Android、JavaScript、C#、PHP(Cli) 等多种 SDK，支持 RESTful API，支持 Socket.IO 协议</div>
+						<div class="point"><strong>专用通道</strong>：为应用购买单独的服务器和带宽，进一步保障服务的实时性</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<SupportedPlatforms />
+</SiteLayout>

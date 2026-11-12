@@ -1,0 +1,42 @@
+---
+import '../styles/site.css';
+import Header from '../components/site/Header.astro';
+import Footer from '../components/site/Footer.astro';
+import ContactRail from '../components/site/ContactRail.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	/** 当前高亮的导航项：products / usercases / downloads / docs / company */
+	active?: string;
+}
+
+const {
+	title,
+	description = '云巴 yunba 是一家专业的实时消息通信云服务提供商，致力于为移动应用、Web 以及物联网打造大规模、跨平台的实时通信系统。',
+	active = '',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta
+			name="keywords"
+			content="云巴、Yunba、云巴推送、跨设备实时系统、IoT、realtime app、push、实时弹幕、实时后端、实时消息、实时应用、物联网、智能家居"
+		/>
+		<link rel="icon" href="/favicon.ico" />
+	</head>
+	<body class="site">
+		<Header active={active} />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<ContactRail />
+	</body>
+</html>

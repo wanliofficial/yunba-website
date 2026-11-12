@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductHero from '../../components/site/ProductHero.astro';
+import SupportedPlatforms from '../../components/site/SupportedPlatforms.astro';
+---
+
+<SiteLayout title="实时消息_云巴 Yunba - App、Web、物联网实时通讯云服务" active="products">
+	<ProductHero active="realtime" />
+
+	<section class="section">
+		<div class="container">
+			<div class="product-feature reverse">
+				<div class="pf-img">
+					<img src="/site/static/img/feature-2.png" alt="实时消息" />
+				</div>
+				<div class="pf-text">
+					<h2>实时连接互联网、物联网，为低功耗智能设备特别优化</h2>
+					<p>实时连接互联网、移动互联网、物联网</p>
+					<p>通过互联网实时连接智能设备</p>
+					<p>轻松用手机、Pad 实时管理海量智能设备</p>
+					<div class="point-list">
+						<div class="point"><strong>支持 MQTT, socket.io</strong></div>
+						<div class="point"><strong>秒内延迟</strong>，与海量设备通讯</div>
+						<div class="point">支持所有平台长链接接入，轻量而高效</div>
+						<div class="point">同样支持几乎所有现有主流平台</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<SupportedPlatforms />
+</SiteLayout>

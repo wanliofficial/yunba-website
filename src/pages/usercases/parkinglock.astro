@@ -1,0 +1,106 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+// 注：部分原站配图（手机端界面、系统截图、案例照片）未留存于归档，此页以文字为主复现
+const highlights = [
+	{ t: '持久耐用', d: '车位锁使用寿命测试高达100万次，稳定可靠' },
+	{ t: '超低功耗', d: '车位锁低功耗免充电可持续使用一年' },
+	{ t: '远程控制', d: '可通过控制中心及用户手机远程控制车位锁上升下落' },
+	{ t: '智能预约', d: '用户可提前预约身边的闲置车位，在线支付预约金' },
+	{ t: '实时监控', d: '管理后台实时查看剩余车位数，实时监控车位锁电量、状态' },
+];
+const lockFeatures = [
+	'采用低速直流电机驱动，低噪音。',
+	'内置防撞复位装置，碰撞不伤车，影响车位锁的正常使用。',
+	'具有低电压自动开锁功能，配有低电量充电提醒指示灯。',
+	'上升遇阻力自动回落，不伤车，避免车位锁顶撞汽车底盘。',
+	'车位锁外壳、底板及压盖采用优质铝合金压铸而成，防水不生锈。',
+	'高灵敏微动开关，安全可靠，使用寿命100万次。',
+];
+const appSteps = [
+	'实时查看附近停车场的剩余车位数量;',
+	'在线支付订金预约闲置车位;',
+	'用户在停车前提前远程解锁车位，方便快捷;',
+	'实时查看车位锁的电量，低电量报警;',
+	'多终端控制车位锁，无需下载app;',
+];
+const advantages = [
+	'专业的物联网云平台服务经验，无需重复开发云端实时系统',
+	'能应付大规模高并发场景，轻松控制百万级数量车位',
+	'实时性强，控制开关锁延迟极低',
+	'数据支持 SSL 安全协议加密，场景更可靠',
+	'支持实时控制，远程监控智能停车位',
+	'管理后台实时查看在线车位占用数据，财务报表等',
+];
+---
+
+<SiteLayout title="智能车位锁_用户案例_云巴 Yunba - App、Web、物联网实时通讯云服务" active="usercases">
+	<section class="page-hero">
+		<div class="container">
+			<h1>智能车位锁方案</h1>
+			<p>云巴智能车位锁一站式解决方案</p>
+		</div>
+	</section>
+
+	<div class="container article-body">
+		<p>
+			云巴共享车位方案包含智能车位锁，APP开发，电子控制系统，提供一站式解决方案。智能车位锁为每一个闲置车位赋予独立的智能化属性，通过锁内的智能模块通信实现对每一个车位的管理，实现车位的共享。告别传统停车场车位管理困难，依赖高成本人力收费等问题。
+		</p>
+		<p>实现这种开放式的停车模式，必然要通过车位级的管理平台和车位级的智能系统，由智能车位锁和管理云平台组成。</p>
+
+		<h3>整体方案特点</h3>
+		<div class="case-grid" style="grid-template-columns:repeat(2,1fr);gap:14px;">
+			{highlights.map((h) => (
+				<div class="case-card" style="text-align:left;padding:18px 20px;cursor:default;">
+					<h5 style="margin-bottom:8px;">{h.t}</h5>
+					<p style="text-align:left;margin:0;">{h.d}</p>
+				</div>
+			))}
+		</div>
+
+		<h3>智能车位锁</h3>
+		<p>
+			智能车位锁专门为共享车位商务模式设计，车位锁功耗极低，可免充电续航一年，免去对车位繁琐的人力维护，支持多终端远程控制功能，具有以下特点:
+		</p>
+		<div class="two-col">
+			<div class="col-text">
+				<ul style="padding-left:20px;">
+					{lockFeatures.map((f) => <li>{f}</li>)}
+				</ul>
+			</div>
+			<div class="col-img">
+				<img src="/site/static/img/parking-lock.png" alt="智能车位锁" />
+			</div>
+		</div>
+
+		<h3>多终端控制方案</h3>
+		<p>
+			云巴智能车位锁配套用户 app/微信 开发功能，用户可以通过手机端查看附近剩余车位的数量和位置，远程多终端控制车位锁开关，实现共享车位业务。
+		</p>
+		<h4>实现功能</h4>
+		<ul style="padding-left:20px;">
+			{appSteps.map((s, i) => <li>{String(i + 1).padStart(2, '0')} {s}</li>)}
+		</ul>
+
+		<h3>中央电子控制管理系统：</h3>
+		<p>云巴物联网实时系统，为物联网提供最专业的后台管理方案，已为过5亿终端提供服务。</p>
+		<h4>云巴智能车位锁系统，有以下优势：</h4>
+		<ul style="padding-left:20px;">
+			{advantages.map((a) => <li>{a}</li>)}
+		</ul>
+
+		<h3>智能锁云端应用平台</h3>
+		<p>使用云巴共享单车云端应用平台，支持多个平台解锁、控制共享单车。</p>
+		<p>云巴实时通信云服务基于 MQTT 协议，采用 Erlang/OTP 架构设计，是一个大规模双向实时应用平台。</p>
+
+		<h3>实际案例</h3>
+		<p>
+			共享智能车位方案可实现配套共享汽车等业务对专用停车位远程控制的需求，也可以广泛应用于小区、医院、商场、露天停车场、市政路边车位等多个场景，构建一套商业共享停车场网络。
+		</p>
+
+		<div class="cta-row">
+			<a href="/docs/" class="btn btn-outline">查看云巴文档</a>
+			<a href="/usercases/smartlock/" class="btn btn-primary">共享单车方案</a>
+		</div>
+	</div>
+</SiteLayout>

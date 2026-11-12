@@ -1,0 +1,43 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CompanySide from '../components/site/CompanySide.astro';
+---
+
+<SiteLayout title="联系我们_云巴 Yunba - App、Web、物联网实时通讯云服务" active="company">
+	<section class="page-hero">
+		<div class="container">
+			<h1>联系我们</h1>
+			<p>Contact us</p>
+		</div>
+	</section>
+
+	<div class="container company-layout">
+		<CompanySide active="contact" />
+		<div class="company-main">
+			<ul class="contact-list">
+				<li>
+					<span class="ico">✉</span>
+					<a href="mailto:support@yunba.io">support@yunba.io</a>
+				</li>
+				<li>
+					<span class="ico">☎</span>
+					<a href="tel:075586638390">(0755) 8663 8390</a>
+				</li>
+				<li>
+					<span class="ico">⚲</span>
+					<span>深圳市南山区科技园南区科技南十二路</span>
+				</li>
+			</ul>
+
+			<div class="map-frame">
+				公司位置：深圳市南山区科技园南区科技南十二路<br />
+				<span style="font-size:12px;">（原站点嵌入 Google Maps，此处以文字说明代替）</span>
+			</div>
+
+			<h3>开发者支持</h3>
+			<p>
+				技术支持与常见问题请先查阅<a href="/docs/">文档中心</a>与<a href="/docs/product_faq/">产品常见问题解答</a>；商务合作请通过上方邮箱联系。
+			</p>
+		</div>
+	</div>
+</SiteLayout>

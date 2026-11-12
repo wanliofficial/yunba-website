@@ -1,0 +1,84 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+// 注：原站正文配图（智能锁/电路板/云端平台/App 截图/解锁动图）未留存于归档，此页以文字复现
+const appFeatures = ['用户注册，头像、昵称等个性管理', '扫码开锁，骑行计费，实时路径', '用户充值，钱包结算', '其他自定义功能'];
+const cloudFeatures = [
+	'完整易用的管理后台，运营数据一手掌握',
+	'零配置无缝切换，接入简单，无需重复开发云端实时系统',
+	'能应付大规模高并发场景，轻松控制百万级数量的单车',
+	'实时性强，控制开关锁延迟极低',
+	'终端控制鸣笛，找车更便捷',
+	'数据支持 SSL 安全协议加密，开锁场景更可靠',
+	'支持单车实时定位，骑行实时路径功能',
+];
+---
+
+<SiteLayout title="智能锁_用户案例_云巴 Yunba - App、Web、物联网实时通讯云服务" active="usercases">
+	<div class="notice-bar">
+		查看云巴物联锁视频介绍 →
+		<a href="https://github.com/yunbademo/yunba-smartlock" target="_blank" rel="noopener">GitHub 项目</a>
+	</div>
+
+	<section class="page-hero">
+		<div class="container">
+			<h1>共享单车方案</h1>
+			<p>云巴共享单车一站式解决方案</p>
+		</div>
+	</section>
+
+	<div class="container article-body">
+		<h3 style="margin-top:0;">3 年技术积累, 已为过亿终端提供服务</h3>
+		<p>
+			云巴从 2013 年开始专注于物联网实时、高并发云服务，经过 3 年的积累，目前已经为过亿的终端提供服务。有一套完整、成熟的物联网解决方案，可以应用于物联锁、共享单车等业务。如今云巴推出共享单车一站式解决方案，为共享单车创业、厂家升级智能锁加速。
+		</p>
+
+		<h3>云巴共享单车锁</h3>
+		<p>
+			云巴与智能锁厂商深度合作，推出使用云巴SDK的云巴共享单车锁，智能锁支持GSM，采用GPS
+			定位，用户可以通过蓝牙 + GPRS扫码开锁；智能锁为防水防摔防盗锁体，内置传感器；可花鼓充电或太阳能充电，具有蜂鸣报警和低电压报警等功能。
+		</p>
+		<p>
+			共享单车创业者不需再为硬件开发、共享单车马蹄锁稳定性等问题耗费时间，为加速共享单车创业加速。用户使用云巴单车锁可选择直接使用云巴云平台服务，也可以进行二次开发。更多详情可参考：<a
+				href="https://github.com/yunbademo/yunba-smartlock" target="_blank" rel="noopener">云巴智能锁</a
+			>
+		</p>
+		<p>
+			此外，我们也为厂商集成云巴云平台服务，助力传统单车锁生产厂家升级智能锁。云巴可为厂家提供的电路板进行集成，提供相应的技术支持。在共享单车、单车智能锁需求量巨大的今天，厂商提供硬件只需把集成云巴SDK的电路板硬件装嵌在锁里，即可使用云巴完整、高可靠的云平台和管理后台服务。厂商将大大缩减智能锁后端开发成本和开发时间，把握机遇，把传统单车锁升级为满足共享单车租赁业务的智能锁。
+		</p>
+
+		<h3>云巴共享单车 app</h3>
+		<p>
+			提供共享单车 iOS + Android app ，客户可自定义 app 需求，提供 app 代码和 JSON
+			接口代码。为有意运营创业共享单车的创业者缩短 app 开发时间和开发成本。
+		</p>
+		<div style="background:#f7fbfe;border:1px solid #e6f2f9;border-radius:4px;padding:26px 30px;margin:26px 0;">
+			<h4 style="margin-top:0;">实现功能</h4>
+			<ul style="padding-left:20px;margin-bottom:0;">
+				{appFeatures.map((f, i) => <li>{String(i + 1).padStart(2, '0')} {f}</li>)}
+			</ul>
+		</div>
+
+		<h3>智能锁云端应用平台</h3>
+		<p>使用云巴共享单车云端应用平台，支持多个平台解锁、控制共享单车。</p>
+		<p>云巴实时通信云服务基于 MQTT 协议，采用 Erlang/OTP 架构设计，是一个大规模双向实时应用平台。</p>
+		<ul style="padding-left:20px;">
+			{cloudFeatures.map((f) => <li>{f}</li>)}
+		</ul>
+		<p>
+			如今共享单车服务在高并发的场景下，往往容易出现开锁时间慢，开锁失败，服务器崩溃等达不到要求的现象。
+		</p>
+		<p>
+			使用云巴云服务平台的智能锁从发送消息给模块到消息反馈到客户端开锁成功仅需2秒，使用云巴提供的共享单车云服务方案,
+			除了可以大大节省成本外，更重要的是能在大量的终端设备下，依然保持低延迟，高并发和高可靠的服务。
+		</p>
+
+		<div class="cta-row">
+			<a href="https://github.com/yunbademo/yunba-smartlock" target="_blank" rel="noopener" class="btn btn-outline"
+				>前往 GitHub 查看云巴物联锁更多详情</a
+			>
+			<a href="/usercases/livevideo/" class="btn btn-outline">视频直播互动案例</a>
+			<a href="/docs/" class="btn btn-primary">查看云巴文档</a>
+		</div>
+	</div>
+</SiteLayout>

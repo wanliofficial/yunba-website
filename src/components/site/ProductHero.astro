@@ -1,0 +1,29 @@
+---
+interface Props {
+	/** 当前高亮的产品：push / realtime / analytics / presence */
+	active: string;
+}
+const { active } = Astro.props;
+const tabs = [
+	{ key: 'push', name: '消息推送', en: 'Push Notification', img: 'push.png', href: '/products/push/' },
+	{ key: 'realtime', name: '实时消息', en: 'Realtime Messaging', img: 'msg.png', href: '/products/realtime/' },
+	{ key: 'analytics', name: '实时统计', en: 'Analytics', img: 'stat.png', href: '/products/analytics/' },
+	{ key: 'presence', name: '实时在线', en: 'Presence', img: 'user.png', href: '/products/presence/' },
+];
+---
+
+<section class="hero">
+	<div class="container" style="padding-top:44px;text-align:center;">
+		<h1 style="font-size:32px;margin:0 0 12px;color:#222;font-weight:600;">开发、部署大规模实时应用</h1>
+		<p style="font-size:16px;color:#5a6b76;margin:0 0 36px;">轻松实现跨手机、浏览器、智能设备的实时通讯</p>
+		<div class="product-tabs">
+			{tabs.map((t) => (
+				<a class:list={['product-tab', { active: t.key === active }]} href={t.href}>
+					<img src={`/site/static/img/${t.img}`} alt={t.name} loading="lazy" />
+					<h5>{t.name}</h5>
+					<p>{t.en}</p>
+				</a>
+			))}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,60 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const roomFeatures = [
+	'消息控制在 200 毫秒的延迟内、稳定的消息高并发能力；',
+	'聊天室数据支持 SSL 安全协议加密；',
+	'直播聊天室无人数上限；',
+	'支持接入任意直播接口；',
+	'可查看聊天室历史消息记录；',
+	'支持聊天室消息自定义，打赏、点赞、点爱心等功能可轻松实现；',
+];
+---
+
+<SiteLayout title="视频直播弹幕_用户案例_云巴 Yunba - App、Web、物联网实时通讯云服务" active="usercases">
+	<section class="page-hero">
+		<div class="container">
+			<h1>视频直播互动</h1>
+			<p>使用云巴快速实现直播互动功能</p>
+		</div>
+	</section>
+
+	<div class="container article-body">
+		<h3 style="margin-top:0;">直播互动的重要性与实现难题</h3>
+		<p>
+			近些年来，视频直播领域迅猛发展，市场不断扩大，吸引了大批的创业者。然而，想要开发出一个优秀的直播平台，不仅要处理音视频方面的问题，还需解决大量用户同时在线的实时互动难题。在视频直播中，主播和观众的实时互动是不可缺少、不容小觑的内容，主要包括发送弹幕、打赏、点赞等，因此打造一个高可用、低延迟、强稳定的聊天室具有重要意义。
+		</p>
+		<h3>云巴可提供第三方直播互动的技术服务</h3>
+		<p>
+			基于 MQTT，采用 Erlang/OTP 架构设计的云巴实时通信云服务，是一个 Pub/Sub 模型的双向实时系统，通过透明传输，可为直播平台实现所有的实时消息传输。
+		</p>
+
+		<p>使用云巴的实时通信云服务构建的直播聊天室，具备以下特征或功能：</p>
+		<ol style="padding-left:22px;color:#555;font-size:15px;">
+			{roomFeatures.map((f) => <li>{f}</li>)}
+		</ol>
+		<p>此外，云巴还可根据直播平台的需要提供更加丰富和优秀的定制服务，以满足不同的功能需求。</p>
+		<p style="color:#999;font-size:13px;">（原页配图：手机端 / Web 端直播互动演示动图）</p>
+
+		<h3>使用云巴聊天室的优势</h3>
+		<p>
+			首先，开发者不仅可以免去自行搭建、维护后端基础服务等的繁琐步骤，减少各类资源的耗费，还可以将精力集中在产品的开发与优化，减少产品开发周期。
+		</p>
+		<p>
+			其次，操作流程简单，开发者只需几个步骤即可快速实现直播互动的功能。通过订阅（Subscribe）“弹幕”、“点赞”、“统计信息”等频道（Topic），向这些频道发布（Publish）消息，即可实现弹幕、点赞、在线信息统计等功能，且每种功能只需“几行代码”！
+		</p>
+		<p>
+			最后，云巴服务门槛低。直播平台初创小团队可能面临资金耗费的问题，而云巴可为其提供每月 100 万次的免费 API 调用与每月 100 万次的免费推送。云巴的低门槛服务，可使直播平台的初创团队免于面临资金尴尬的问题，从而节省一笔珍贵的创业资金。
+		</p>
+
+		<div class="cta-row">
+			<a href="https://yunbademo.github.io/yunba-live-video/" target="_blank" rel="noopener" class="btn btn-outline"
+				>云巴直播互动在线演示</a
+			>
+			<a href="https://github.com/yunbademo/yunba-live-video" target="_blank" rel="noopener" class="btn btn-outline"
+				>前往 GitHub 查看直播互动更多详情</a
+			>
+			<a href="/docs/product_demo_bullet/" class="btn btn-primary">如何用云巴实现弹幕功能</a>
+		</div>
+	</div>
+</SiteLayout>

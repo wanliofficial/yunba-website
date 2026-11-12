@@ -1,0 +1,38 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CompanySide from '../components/site/CompanySide.astro';
+import { mediaReports } from '../data/site';
+---
+
+<SiteLayout title="媒体报道_云巴 Yunba - App、Web、物联网实时通讯云服务" active="company">
+	<section class="page-hero">
+		<div class="container">
+			<h1>媒体报道</h1>
+			<p>Media reports</p>
+		</div>
+	</section>
+
+	<div class="container company-layout">
+		<CompanySide active="media" />
+		<div class="company-main">
+			<div class="media-grid" style="grid-template-columns:repeat(3,1fr);">
+				{mediaReports.map((m) => (
+					<div class="media-item">
+						<div class="media-logo">
+							<a href={m.url} target="_blank" rel="noopener nofollow">
+								{m.logo ? (
+									<img src={m.logo} alt={m.media} loading="lazy" />
+								) : (
+									<span class="media-badge">{m.media}</span>
+								)}
+							</a>
+						</div>
+						<h3><a href={m.url} target="_blank" rel="noopener nofollow">{m.title}</a></h3>
+						<p>{m.desc}</p>
+						<time>{m.date}</time>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</SiteLayout>
