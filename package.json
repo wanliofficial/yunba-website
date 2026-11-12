@@ -1,0 +1,22 @@
+{
+  "name": "yunba-docs",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro dev",
+    "build": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro build",
+    "preview": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro preview",
+    "migrate": "node scripts/migrate.mjs",
+    "sidebar": "node scripts/generate-sidebar.mjs"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.42.9",
+    "astro": "^7.4.10",
+    "js-yaml": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "pagefind": "^1.6.0"
+  }
+}

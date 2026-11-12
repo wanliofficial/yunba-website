@@ -1,0 +1,144 @@
+---
+title: Portal
+---
+
+## 功能
+Portal，即 “门户”。云巴的 Portal 是用户应用的管理入口，后端连接着云巴的实时消息系统。
+
+用户在云巴官网注册并登录后，可以通过点击页面右上方的用户名进入 Portal 页面。 
+通过云巴的 Portal 页面，可以创建和管理应用、发布消息、查看统计信息，还可以查看通过 Portal 发布过的消息的历史记录。
+
+常有客户疑惑，为什么只有一个设备在线时，Portal 的活跃用户统计数量却是 2 ？原因很简单，Portal 也同时是一个 [JavaScript](https://github.com/yunba/yunba-javascript-sdk) 客户端，可以向指定应用（[AppKey](/product_kb_app_key/)）的指定 Topic/Alias 发布消息，因此会算在统计内。
+
+## 如何在云巴 Portal 上创建新应用
+
+如图所示：
+
+![productpng_portal_creat_new_app.png](/image/productpng_portal_creat_new_app.png)
+
+- 打开[云巴官方网站](https://yunba.io)，注册并登录。
+- 登录后，点击网页右上角的用户名，会进入 Yunba Portal 主界面，点击右上角 “创建应用”。
+- 逐一填写应用信息。其中，“应用名称” 和 “应用包名” 是必填项。对于 Android 应用来说，“应用包名” 一项需要填写 “Android” 应用包名。见下图。
+- 对于 iOS 应用，在 “iOS 开发/生产证书” 处上传 iOS 开发/生产证书（*.p12）。如果证书导出时有设置密码，需要在 “开发/生产证书密码” 项填上证书的密码。
+- 应用信息填写完成后，点击 “确定”，会调转到 “应用列表” 界面。点击应用的 “应用名” 或右侧的 “管理” 按钮，可以打开该应用的管理页面。
+- 在 “应用详情” - “基本信息” 页，可以看到应用的 AppKey、Secret Key 等。**请妥善保管好您的 AppKey、Secret Key 等应用信息，不要在群聊等公众场合下泄露。**
+- 在 “应用详情” - “RESTful API Quick Demo” 页，我们给出了通过 RESTful API 的 `Publish` 和 `Publish_to_alias` 向 Portal 发消息的示例。为了方便演示，我们将 Portal 客户端订阅了 `yunba_curl_demo` [频道](/product_kb_topic_and_alias/)，并将其 [别名](/product_kb_topic_and_alias/) 设置为 `yunba_curl_demo_alias` 用户只需要复制并发送页面上给出的 [cURL](https://curl.haxx.se/docs/manpage.html) 命令，就可以看到消息收发的效果。如下图所示：
+
+![productpng_portal_restful_demo.png](/image/productpng_portal_restful_demo.png)
+
+
+## 利用云巴 Portal 发布消息
+
+### 通过 Publish 向频道发布消息
+
+可以向客户端 `subscribe` 的 [频道](/product_kb_topic_and_alias/)（Topic）发布消息，客户端即可收到消息，如图所示:
+
+![productpng_portal_publish_to_topic.png](/image/productpng_portal_publish_to_topic.png)
+
+在客户端（以 Android 客户端为例）订阅频道：
+
+![androidpng_demo_app_message.png](/image/androidpng_demo_app_message.png)
+
+客户端收到 Portal 发布的消息：
+
+![androidpng_demo_notification.png](/image/androidpng_demo_notification.png)
+
+### 通过 Publish2 向频道发布消息
+
+此外，Portal 还提供了通过 Publish2 发布消息的功能。
+
+- 点击 **更多选项** 可设置 [离线消息](/product_kb_offline_message/) 保留时间（Time To Live）、[QoS](/product_kb_qos/) 值 和 Message ID（如果不填则由系统自动生成）
+- 可设置 **APN JSON** 发送 APNs 消息，发送 APNs 消息的方法具体可参考 [如何通过云巴实现 APNs 推送](/ios_kb_apns_implementation/) 和 [APNs 参数设置](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1)。
+
+![productpng_portal_publish2_to_topic.png](/image/productpng_portal_publish2_to_topic.png)
+
+
+
+### 通过 Publish 向别名发布消息
+
+
+如果客户端通过 `SetAlias` 设置了[别名](/product_kb_topic_and_alias/)，用户还可以通过 Portal 向客户端的别名发布消息：
+
+![productpng_portal_publish_to_alias.png](/image/productpng_portal_publish_to_alias.png)
+
+此时，同一 AppKey 下，别名为 Jack 的客户端就会收到该条消息。
+
+### 通过 Publish2 向别名发布消息
+
+类似地，也可以通过 Publish2 发布消息，带更多的参数，如下图。设置了该别名的客户端会收到消息。
+
+- 点击 **更多选项** 可设置 [离线消息](/product_kb_offline_message/) 保留时间（Time To Live）、[QoS](/product_kb_qos/) 值 和 Message ID（如果不填则由系统自动生成）
+- 可设置 **APN JSON** 发送 APNs 消息，发送 APNs 消息的方法具体可参考 [如何通过云巴实现 APNs 推送](/ios_kb_apns_implementation/) 和 [APNs 参数设置](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1)。
+
+![productpng_portal_publish2_to_alias.png](/image/productpng_portal_publish2_to_alias.png)
+
+
+### 在 Portal 上查看消息历史
+
+点击 **消息历史** 可查看使用此 appkey 发送的所有消息（包括你在 Portal 上发送的消息）。
+
+点击 **Portal 发送的消息** 可以查看在 Portal 上发送的消息。
+
+![productpng_portal_portal_publish_history](/image/productpng_portal_portal_publish_history.png)
+
+点击 **所有消息** 可以查看使用此 appkey 发送的所有消息。支持按时间、频道或别名过滤消息。
+
+![productpng_portal_publish_history](/image/productpng_portal_publish_history.png)
+
+
+## 云巴 Portal 的发布上报统计
+productpng_portal_publish_statistic.png
+![report.png](/image/productpng_portal_publish_statistic.png)
+
+如图所示，可查看该应用（[AppKey](/product_kb_app_key/)） 下的消息发布和送达情况。
+
+蓝色波形为一定时间（10 秒、分钟、小时、日）内的消息发布数量；黑色波形为一定时间内的消息送达数量。（Portal 也属于一个用户）
+
+## 云巴 Portal 的在线用户统计
+
+![online.png](/image/productpng_portal_online_statistic.png)
+
+- 一段时间内的在线用户数：该时间段内持续在线（connected）的用户数量。如：“在线用户数/小时” 的单位表示该小时内持续在线，未断开与云巴的长连接的用户数量。
+- 一段时间内的活跃用户数：该时间段内进行过上线操作的用户数量（不一定持续在线）。如：“活跃用户数/小时” 的单位表示该小时内进行过上线操作，即连接过云巴服务的用户数量。
+
+>**注**：如果订阅了该 Topic 但未设置用户 [别名](/product_kb_topic_and_alias/)（Alias），则在 “在线用户”和“频道用户列表” 都不进行显示。
+
+### 频道用户列表
+
+点击 **频道用户列表**，可查看应用（[AppKey](/product_kb_app_key/)） 下某个 [频道](/product_kb_topic_and_alias/) 的收听用户别名列表。
+
+
+## 云巴 Portal 的设备状态查询
+
+![productpng_portal_alias_state.png](/image/productpng_portal_alias_state.png)
+
+输入设备 [别名](/product_kb_topic_and_alias/) 后，可以查看该设备的 UID、当前的在线/离线状态，以及最近一次上线的时间。
+
+## 应用账单管理
+
+云巴在 2017 年年初，上线了针对免费版和基础版用户的 [新的价格方案](http://blog.yunba.io/yun-ba-yunba-io-xin-jie-ge-fang-an-ji-jiang-shang-xian/)（详见 [价格页面](https://yunba.io/pricing/) 和 [计费规则](https://yunba.io/docs/product_kb_pricing_details)）。
+
+云巴 Portal 也相应做出了调整。
+
+### 应用列表
+
+如图所示，用户在“应用列表”页，可以查看各个应用的日活和消息量（数值会有五分钟左右的延迟），不同的日活对应的档次也显示在应用卡片上。
+
+![productpng_portal_apps.png](/image/productpng_portal_apps.png)
+
+- 应用自出现第一个日活开始（第一个设备接入云巴服务器），就会按照 30 个自然日为单位进行周期性结算，并自动生成账单；在 Portal 的应用列表页面会显示账单生成日的倒计时（参考上图左侧的卡片）。
+- 随着日活的增长，应用会自动升级（详见 [价格页面](https://yunba.io/pricing/)）：当日活超过 100 时，会由免费版本自动升级为基础 A 档；超过 1000 时，升级为基础 B 档；超过 5000 时，会升级为基础 C 档；超过 10000，则需要联系商务开通专业版。
+- 账单生成后，系统会自动进行扣费，如果扣费时余额不足，应用会进入欠费状态（参考上图中间的卡片）；用户需要在 20 天内登录 Portal 的“我的账单”页面手动进行缴费，否则，应用会进入免费版受限状态（参考上图右侧的卡片）；详见 [计费规则](https://yunba.io/docs/product_kb_pricing_details)。
+
+### 我的账单
+
+在“我的账单”页面，用户可以查看各个应用的日活、消息量和账单状态，并对欠费账单进行手动缴费。
+
+![productpng_portal_bills.png](/image/productpng_portal_bills.png)
+
+
+### 收支管理
+
+在“收支管理”页面，用户可以进行账号充值。目前支持“微信”和“支付宝”两种支付方式。用户可以在账单结算日之前提前进行充值，以保证自动扣费成功。
+
+![productpng_portal_payment.png](/image/productpng_portal_payment.png)
