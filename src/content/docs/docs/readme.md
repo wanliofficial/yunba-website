@@ -1,0 +1,140 @@
+---
+title: Yunba Documentation
+---
+
+## 资源列表
+
+- 快速入门
+  - [云巴是什么](/docs/product_kb_whats_yunba/)
+  - [常见问题解答（FAQ）](/docs/product_faq/)
+  - [云巴快速入门教程](/docs/product_kb_yunba_quick_start/)
+
+- 案例
+  - [云巴视频直播弹幕](https://github.com/yunbademo/yunba-live-video) 
+  - [云巴智能小屋](https://github.com/yunbademo/yunba-smarthome) 
+  - [云巴智能办公室](https://github.com/yunbademo/yunba-smartoffice)
+  - [云巴多屏互动](https://github.com/yunbademo/yunba-multi-screen) 
+  - [云巴聊天室](https://github.com/yunbademo/yunba-chatroom)  
+  - [云巴 Yo](https://github.com/yunbademo/YunBa-Yo)
+  - [更多案例](https://github.com/yunbademo) 
+
+- 功能介绍
+  - [频道和别名](/docs/product_kb_topic_and_alias/)
+  - [AppKey](/docs/product_kb_app_key/)
+  - [Portal](/docs/product_kb_portal/)
+  - [云巴的实时在线](/docs/product_kb_presence/)
+  - [云巴的离线消息](/docs/product_kb_offline_message/)
+  - [QoS](/docs/product_kb_qos/)
+  - [云巴服务的 IP 是不固定的](/docs/product_kb_yunba_unfixed_ip/)
+
+- Android
+  - [云巴 Android 消息推送](/docs/android_kb_android_push/)
+  - [Android SDK 快速入门](/docs/android_sdk_quick_start/)
+  - [Android SDK API 手册](/docs/android_sdk_api_manual/)
+  - [Android SDK 使用指南](/docs/android_sdk_tutorial/)
+  - [运行 Yunba Android Demo](/docs/android_demo_quick_start/)
+
+- iOS
+  - [云巴 iOS 消息推送](/docs/ios_kb_ios_push/)
+  - [iOS SDK 快速入门](/docs/ios_sdk_quick_start/)
+  - [iOS SDK API 手册](/docs/ios_sdk_api_manual/)
+  - [运行 Yunba iOS Demo](/docs/ios_demo_quick_start/)
+  - [如何通过云巴实现 APNs 推送](/docs/ios_kb_apns_implementation/)
+  - [生成 APNs 证书的步骤](/docs/ios_kb_create_apns_certificate/)
+  - [新建 App ID 的步骤](/docs/ios_kb_create_app_id/)
+  - [新建 CSR 文件的步骤](/docs/ios_kb_create_csr_file/)
+  - [生成 Provisioning Profile](/docs/ios_kb_create_provisioning_profile/)
+  - [APNs 推送的 Payload 介绍](/docs/ios_kb_payload/)
+  - [多证书](/docs/ios_kb_multiple_certificates/)
+
+- JavaScript
+  - [JavaScript SDK 快速入门](/docs/js_sdk_quick_start/)
+  - [JavaScript SDK API 手册](/docs/js_sdk_api_manual/)
+  - [运行 Yunba JavaScript Demo](/docs/js_demo_quick_start/)
+
+- C 和 Embedded C
+  - [快速入门](/docs/c_sdk_quick_start/)
+  - [C SDK API 手册](/docs/c_sdk_api_manual/)
+  - [Embedded C API 手册](/docs/embeddedc_sdk_api_manual/)
+  - [运行 Yunba C Demo](/docs/c_demo_quick_start/)
+
+- RESTful
+  - [API 手册](/docs/restful_api_api_manual/)
+
+- Socket.IO
+  - [API 手册](/docs/socketio_api_api_manual/)
+  - [运行 Yunba Socket.IO Python Demo](/docs/socketio_python_demo_quick_start/)
+  - [运行 Yunba Socket.IO Java Demo](/docs/socketio_java_demo_quick_start/)
+
+- C Sharp
+ -  [运行 Yunba C Sharp Demo](/docs/csharp_demo_quick_start/)
+ 
+- Java
+  - [API 手册](/docs/java_sdk_api_manual/)
+  - [Yunba Java Demo](/docs/java_demo_quick_start/)
+
+- PHP(Cli)
+  - [运行 Yunba PHP Demo](/docs/php_demo_quick_start/)
+
+## 文档风格
+
+- 文档采用 Github 兼容 Markdown 格式编写，后渲染到官网上。
+- 中文文档中如果出现英文、数字、超链接或某些特殊字符的文本时，需要在文本两侧加上空格进行分隔。遇到标点符号时可省略空格。如果必须对文本使用引号，需要使用中文的引号。例如：在 WampServer 解压后的 “...\wamp\bin\php” 路径下搜索 php.init 文件；Yunba 的 Android/iOS 消息推送；保留 50 条。
+- Github Markdown 的中文引号始终显示为半角引号，在使用引号后，引号外侧需再加个空格。同样地，遇到标点符号时可空格省略。（参考上面的例子）
+- 中文文档，一律使用中文标点符号。夹杂英文或其他非中文字符时，尽量只在字符外侧使用空格进行分隔，不使用引号。
+- 专用名词统一。特别是中英文翻译，使用统一的对照表。
+- API 输入参数使用表格描述。
+- 文档的图片使用 Github URL：/image/xxx.png
+- 提到某个函数时，用：`函数名`。例如，`subscribe()`。
+- 代码示例中涉及到 AppKey、SecKey、Message ID、Session ID 时，使用统一的示例（代码示例较长，ID 必须变化的情况除外）：
+  - AppKey：567a4a754407a3cd028aaf6b
+  - SecKey：sec-mj64xlu0ob1Xs1wWuZzmGZOYZqrpFmFxp5jHULr13eUZCVpS
+  - Message ID：11833652203486491112
+  - Session ID：567a4a754407a3cd028aaf6b-f02bf150-c653-4557-973f-8526b078d736
+- 注意事项另起一行，并用引用的方式写：**注**：……。
+- 文档标题为 # 级别，以此类推。
+- 需要用到序号时，使用：1. 1.1 1.2 样式。
+- 添加代码的首行统一顶格，其余行则遵守代码格式。
+
+- Anchor：
+  - 一律为小写字母；
+  - 空格用短横杠代替；
+  - 小数点直接忽略掉；
+  - 例如：小标题“自定义 Receiver 在 AndroidManifest.xml 的配置”对应的是：#自定义-receiver-在-androidmanifestxml-的配置
+
+
+## 渲染后效果问题
+- 换行：Github Markdown（简称 GM）支持 br 换行，但云巴网页（简称 YB）渲染后不支持。（GM 一次换行无效果，两次换行最终效果是一次换行。）
+- 标题字号：GM 上 #### 级的字，在 YB 上比普通正文字体还要小。因此，约定 GM 上最多使用 ### 级，再往下，采用双星号加粗表示标题。还可以使用 1. 1.1 样式。
+- GM 上使用单个大于号所引导的内容，在 GM 上显示为灰色背景的深灰色字，而在 YB 上渲染后为红色字、有缩进且带大边框，不建议使用。
+
+## 文件命名规则
+
+- 文档的文件名由模块名、文档类型和文档的名称三个部分组成，各个部分用 "_" 连接，全部规定为小写英文字母，除专有英文缩写外不允许缩写。
+  - 第一部分的名字是平台名，如 ios、android 等，通用的则命名为 product；
+  - 第二部分的名字是类型，现有 sdk、demo、kb 和 faq 四种；
+  - 第三部分的名字是文档的名称，没有具体限制，要足够直观，为了简洁性，最好在五个英文单词内，并用"_"连接。
+
+`例如：android_sdk_quick_start.md`
+
+- 图片的命名规则同文档类似，也是三个部分。
+  - 第一部分是平台名后加"png"；
+  - 第二部分是所用在的类型，如：cert、demo、troubleshooting、sdk 和 portal；
+  - 第三部分是描述这个图片所进行的行为，要简洁、直观，限定在五个英文单词内，并用"_"连接。
+
+`例如：productpng_demo_quote_stock`
+
+## 图片标注规则
+
+- 截图
+  - 约定使用 Paintbrush；
+  - 选中：用方框第三行首个红色(Maraschino, sRGB: 237.70.47)3号粗；
+  - 覆盖：用直线首行倒数第四个(Magnesium, sRGB:192.192.192)9号粗。
+
+- 线框图
+  - 目前使用 processOn；
+  - 文字：#323232；英文：Tahoma 12px bold；
+  - 箭头：#b8b8b8；
+  - 透明度：100%；
+  - 彩色块采用最浅色的一组；
+  - 彩色块加白色 10px 边框，可使得箭头首尾与边框分离，更美观；
