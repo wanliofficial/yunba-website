@@ -23,7 +23,7 @@ option | YBSetupOption* | 选项。可包含用于获取订阅权限的密钥 su
 - NO：初始化失败，参数错误。
 
 ### 代码示例
-```objectivec
+```objective-c
 BOOL succ = [YunBaService setupWithAppkey:appkey option:option];
 if (succ) {
     NSLog(@"setup succ %@:%@", appkey, option);
@@ -53,7 +53,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService subscribe:topic qos:qosLevel resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"subscribe to topic succ: %@", topic);
@@ -81,7 +81,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService unsubscribe:topic resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"unsubscribe to topic succ: %@", topic);
@@ -113,7 +113,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService publish:topic data:data option:option resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"publish to topic: %@ data: %@ succ", topic, data);
@@ -145,7 +145,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService publish2:topic data:data option:option resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"publish2 to topic: %@ data: %@ succ", topic, data);
@@ -178,7 +178,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService publishToAlias:alias data:data option:option resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"publish to alias: %@ data: %@ succ", alias, data);
@@ -208,7 +208,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService publish2ToAlias:alias data:data option:option resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"publish2 to alias: %@ data: %@ succ", alias, data);
@@ -236,7 +236,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService subscribePresence:topic resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"subscribe presence to topic:%@ succ", topic);
@@ -264,7 +264,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService unsubscribePresenceToTopic:topic resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"unsubscribe presence to topic:%@ succ", topic);
@@ -296,7 +296,7 @@ arrayCountResultBlock | YBArrayCountResultBlock | API 回调接口。可通过 N
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService getAliasList:testTopic disableState:NO disableAlias:NO resultBlock:^(NSArray *resArray, size_t resCount, NSError *error) {
     if (error.code == kYBErrorNoError) {
         NSLog(@"get alias list[%@] of topic[%@] succ", res, testTopic);
@@ -326,7 +326,7 @@ arrayResultBlock | YBArrayResultBlock | API 回调接口。可通过 NSError *er
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService getTopicList:alias resultBlock:^(NSArray *res, NSError *error) {
     if (error.code == kYBErrorNoError) {
         NSLog(@"get topic list[%@] of alias[%@] succ", res, alias);
@@ -354,7 +354,7 @@ data | NSData * | 对应行为的附加数据，以满足统计相关的其他�
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService report:action withData:data];
 ```
 
@@ -376,7 +376,7 @@ stringResultBlock | YBStringResultBlock | API 回调接口。可通过 NSError *
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService getState:alias resultBlock:^(NSString *res, NSError *error) {
     if (error.code == kYBErrorNoError) {
         NSLog(@"get state[%@] of alias[%@] succ", res, alias);
@@ -404,7 +404,7 @@ resultBlock | YBResultBlock | API 回调接口。可通过返回的 BOOL succ �
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService setAlias:alias resultBlock:^(BOOL succ, NSError *error) {
     if (succ) {
         NSLog(@"set alias[%@] succ", alias);
@@ -431,7 +431,7 @@ stringResultBlock | YBStringResultBlock | API 回调接口。可通过返回的 
 None
 
 ### 代码示例
-```objectivec
+```objective-c
 [YunBaService getAlias:^(NSString *res, NSError *error) {
     if (error.code == kYBErrorNoError) {
         NSLog(@"get alias succ:%@", res);
@@ -463,13 +463,13 @@ None
 
 * 向 APNs 注册，申请获取 Device Token:
 
-```objectivec
+```objective-c
 [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 ```
 
 * 上传 Device Token:
 
-```objectivec
+```objective-c
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"get Device Token: %@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
     [YunBaService storeDeviceToken:deviceToken resultBlock:^(BOOL succ, NSError *error) {

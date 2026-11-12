@@ -26,7 +26,7 @@ title: Yunba iOS SDK 快速入门
 
 添加头文件，引入`YunBaService.h`:  
 
-```objective_c
+```objective-c
 #import "YunBaService.h"
 ```
 
@@ -38,7 +38,7 @@ title: Yunba iOS SDK 快速入门
 
 初始化 SDK 并订阅 Topic，在`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions` 中添加初始化和订阅代码:  
 
-```objective_c
+```objective-c
     [YunBaService setupWithAppkey:AppKey];
 
     [YunBaService subscribe:topic resultBlock:^(BOOL succ, NSError *error){
@@ -53,13 +53,13 @@ title: Yunba iOS SDK 快速入门
 ## 添加 监听消息及处理代码
 在默认消息中心添加的监听代码:  
 
-```objective_c
+```objective-c
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onMessageReceived:) name:kYBDidReceiveMessageNotification object:nil];
 ```
 
 消息处理代码:  
 
-```objective_c
+```objective-c
 - (void)onMessageReceived:(NSNotification *)notification {
     YBMessage *message = [notification object];
     NSString *payloadString = [[NSString alloc] initWithData:[message data] encoding:NSUTF8StringEncoding];

@@ -1,0 +1,12 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Worker 名称与 Cloudflare 项目（yunba）一致
+	"name": "yunba",
+	"compatibility_date": "2026-11-12",
+	// 纯静态站点：直接部署 Astro 构建产物，
+	// 明确声明 assets 可让 wrangler 跳过 Astro 框架引导（astro add cloudflare）
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "404-page"
+	}
+}

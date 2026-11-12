@@ -73,7 +73,7 @@ title: 产品常见问题解答
 
 答： 云巴不会对用户推送的消息进行任何操作，所以也不会加上诸如发送者信息这样的信息。如果用户想在获得消息的同时获得发送者信息这样的信息，可以把消息体打包成一个 json 格式的字符串来进行发送。在消息体内加入发送者别名这样的信息。然后在收消息的时候对 json 做一定的解析。例如在下面的 JavaScript 例子代码中，我们把消息、自定义的用户名和数据类型进行了打包，然后发送出去。
 
-```JavaScript
+```javascript
 var data = JSON.stringify({
     dataType: 'MESSAGE',
     dataContent: $('#chatroom-input').val(),

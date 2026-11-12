@@ -31,7 +31,7 @@ title: Yunba RESTful API 使用手册
 
 **格式**
 
-```url
+```
 http://rest.yunba.io:8080?method=<method>&appkey=<app-key>&seckey=<secret-key>&topic=<topic>&msg="your message"
 ```
 可直接在浏览器地址栏中打开 URL，或使用 cURL 命令来执行。其中，method 的详细说明见下文的 HTTP POST 章节。

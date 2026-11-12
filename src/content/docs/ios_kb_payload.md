@@ -73,7 +73,7 @@ aps 字典也可以包含 content-available 属性。其值为 1 时，远程通
 
 ### 例 1
 下面的负载是一个 aps 字典，带有一个简单的推荐样式的通知消息，有默认的通知按钮（Close 和 View）。通知的值使用的是字符串，而不是字典。该负载还包含一个自定义的数组的属性。
-```JSON
+```json
 {
     "aps" : { "alert" : "Message received from Bob" },
     "acme2" : [ "bang",  "whiz" ]
@@ -82,7 +82,7 @@ aps 字典也可以包含 content-available 属性。其值为 1 时，远程通
 
 ### 例 2
 示例中的负载使用如下的 aps 字典来让设备显示出一个左边是 Close 按钮、右边是一个用本地化语言描述的某个 “动作” 按钮的通知。在本例中，PLAY 作为一个索引，用于从 Localizable.strings 文件中取出当前语言对应的描述词语。该 aps 字典还会将 App 的徽标值设为 5。在 Apple Watch 中，title 键用于通知用户当前有新的请求。
-```JSON
+```json
 {
     "aps" : {
         "alert" : {
@@ -99,7 +99,7 @@ aps 字典也可以包含 content-available 属性。其值为 1 时，远程通
 
 ### 例 3
 本例中的负载描述的通知消息带有 Close 和 View 按钮。App 图标的徽标值会被设为 9。另外，在收到通知时，会播放指定的预置的音频。
-```JSON
+```json
 {
     "aps" : {
         "alert" : "You got your emails.",
@@ -113,7 +113,7 @@ aps 字典也可以包含 content-available 属性。其值为 1 时，远程通
 
 ### 例 4
 下面的例子使用 alert 字典的子属性 loc-key 和 loc-args 来从 App bundle 中获取格式化的本地字符串来替代相应位置的变量字符串的值（loc-args）。该负载还指定了一个自定义的音频以及一个自定义的属性。
-```JSON
+```json
 {
     "aps" : {
         "alert" : {
@@ -128,7 +128,7 @@ aps 字典也可以包含 content-available 属性。其值为 1 时，远程通
 
 ### 例 5
 本例的负载使用 category 键来指定一组通知的动作。
-```JSON
+```json
 {
    "aps" : {
       "category" : "NEW_MESSAGE_CATEGORY",

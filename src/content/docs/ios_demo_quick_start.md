@@ -56,7 +56,7 @@ iOS Demo 程序会用到 APNs，因此，在运行之前，请先参考 [生成 
 **4.2. 替换代码中的 AppKey**
 
 iOS SDK Demo 的代码已经实现了订阅、接收等逻辑，您无需添加任何代码，只需使用您从 Portal 获取到的 Appkey 替换代码中的 Appkey 即可。
-```iOS
+```objective-c
 [YunBaService setupWithAppkey:AppKey];  // 请替换此处的 AppKey。
 ```
 

@@ -67,6 +67,10 @@ export default defineConfig({
 				// root locale：文档平铺在 src/content/docs/ 根目录，URL 不带语言前缀，UI 为简体中文
 				root: { label: '简体中文', lang: 'zh-CN' },
 			},
+			// 文档中的 iOS 代码块使用 objective-c，expressive-code 默认语言包不含它
+			expressiveCode: {
+				langs: ['objective-c'],
+			},
 			social: [
 				{
 					icon: 'github',

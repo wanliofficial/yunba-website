@@ -40,7 +40,7 @@ alert 设置消息通知栏的内容；badge 设置角标；sound 设置通知�
 ```
  
  如使用默认铃声，则为：
-```JSON
+```json
  "sound":"default"
 ```
 

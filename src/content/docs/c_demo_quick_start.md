@@ -49,7 +49,7 @@ title: 运行 Yunba C Demo
 
 为了便于演示，我们将原程序的部分语句注释掉，对 AppKey 和 Topic 直接赋值。如下所示：
 
-```C
+```c
 int main(int argc, char** argv)
 {
 	//MQTTClient client;
