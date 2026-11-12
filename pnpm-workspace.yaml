@@ -1,3 +1,9 @@
+# 单根项目 workspace：声明根目录为唯一包，
+# 兼容旧版 pnpm（如 Cloudflare 默认的 v9）对 packages 字段的强校验。
+packages:
+  - '.'
+
+# pnpm v10+ 依赖构建脚本审批（esbuild/sharp 需要运行 postinstall）
 allowBuilds:
   esbuild: true
   sharp: true
