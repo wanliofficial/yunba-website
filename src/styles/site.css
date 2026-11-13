@@ -132,14 +132,17 @@ body.site {
 
 .hero-img {
 	flex: 1;
+	min-width: 0;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 }
 
 .hero-img img {
+	max-width: 100%;
 	max-height: 360px;
 	width: auto;
+	height: auto;
 }
 
 .btn {
@@ -152,24 +155,27 @@ body.site {
 	cursor: pointer;
 }
 
-.btn-primary {
+/* 说明：需用 .btn.btn-* 双类提高特异性，否则会被 .site a 的链接色覆盖 */
+.btn.btn-primary {
 	background: var(--brand);
+	border-color: var(--brand);
 	color: #fff;
 }
 
-.btn-primary:hover {
+.btn.btn-primary:hover {
 	background: var(--brand-dark);
+	border-color: var(--brand-dark);
 	color: #fff;
 	text-decoration: none;
 }
 
-.btn-outline {
+.btn.btn-outline {
 	border-color: var(--brand);
 	color: var(--brand);
 	background: #fff;
 }
 
-.btn-outline:hover {
+.btn.btn-outline:hover {
 	background: var(--brand);
 	color: #fff;
 	text-decoration: none;
@@ -179,9 +185,21 @@ body.site {
 	margin-top: 22px;
 }
 
+.hero .btn.btn-second {
+	margin-left: 10px;
+}
+
 /* ---------- 通用区块 ---------- */
 .section {
 	padding: 56px 0;
+}
+
+/* 适配正文中的大图：默认撑满容器宽度并居中，勿改回内联 max-width */
+.img-wide {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .section.soft {
@@ -299,6 +317,12 @@ body.site {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
+}
+
+/* 两列变体（车位锁页特点卡片），勿用内联样式，否则媒体查询无法覆盖 */
+.case-grid.cols-2 {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 14px;
 }
 
 .case-card {
@@ -1044,9 +1068,64 @@ body.site {
 	}
 }
 
+/* 导航项较多，窄屏下换行会顶破固定高度：改为自适应高度 + 横向滚动 */
+@media (max-width: 900px) {
+	.site-header-inner {
+		height: auto;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 6px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.site-logo {
+		align-self: center;
+	}
+	.site-nav {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+	.site-nav::-webkit-scrollbar {
+		display: none;
+	}
+	/* 触屏环境没有 hover，下拉菜单直接隐藏（一级链接本身可点击） */
+	.dropdown-menu,
+	.caret {
+		display: none !important;
+	}
+	.section {
+		padding: 40px 0;
+	}
+	.article-body {
+		padding: 36px 0;
+	}
+	.page-hero {
+		padding: 40px 0;
+	}
+	.hero-inner {
+		gap: 20px;
+	}
+	.hero-img {
+		width: 100%;
+	}
+	.hero-img img {
+		max-height: none;
+		max-width: 100%;
+		height: auto;
+	}
+	.article-body table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+	}
+}
+
 @media (max-width: 640px) {
 	.feature-grid,
 	.case-grid,
+	.case-grid.cols-2,
 	.media-grid {
 		grid-template-columns: 1fr;
 	}
@@ -1062,5 +1141,101 @@ body.site {
 	}
 	.contact-rail {
 		display: none;
+	}
+	.hero-text h1,
+	.hero-text h2 {
+		font-size: 26px;
+	}
+	.section-title h2 {
+		font-size: 23px;
+	}
+	.page-hero h1 {
+		font-size: 26px;
+	}
+	.page-hero p {
+		font-size: 14px;
+	}
+	.article-body h3 {
+		font-size: 19px;
+	}
+	.platform-row {
+		gap: 18px;
+	}
+	.platform-badge {
+		min-width: 78px;
+		height: 78px;
+		font-size: 14px;
+	}
+	.product-tabs {
+		gap: 8px;
+		padding-bottom: 28px;
+	}
+	.product-tab {
+		padding: 14px 6px;
+	}
+	.sdk-nav {
+		gap: 14px;
+	}
+	.product-feature,
+	.two-col {
+		gap: 18px;
+	}
+	.cta-row {
+		margin-top: 32px;
+	}
+	.cta-row .btn {
+		width: 100%;
+		text-align: center;
+	}
+	.hero .btn {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.hero .btn.btn-second {
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 14px;
+	}
+	.hero-text h1,
+	.hero-text h2 {
+		font-size: 22px;
+	}
+	.hero-text p {
+		font-size: 14px;
+	}
+	.section {
+		padding: 32px 0;
+	}
+	.article-body {
+		padding: 28px 0;
+	}
+	.page-hero {
+		padding: 32px 0;
+	}
+	.page-hero h1 {
+		font-size: 22px;
+	}
+	.footer-cols {
+		grid-template-columns: 1fr;
+	}
+	.feature-item img {
+		height: 48px;
+	}
+	.sdk-block-head,
+	.sdk-block-body {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+	.notice-bar {
+		font-size: 12px;
+		padding: 8px 14px;
+	}
+	.article-body {
+		font-size: 14px;
 	}
 }
