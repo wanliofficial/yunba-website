@@ -20,9 +20,8 @@
 
 ## 环境要求
 
-- **Node.js ≥ 22.23.4**（Astro 7 要求）。当前使用 `~/Downloads/node-v26.0.0-darwin-arm64`，
+- **Node.js ≥ 22.23.4**（Astro 7 要求）。当前使用 `~/tools/node26`（v26.0.0），
   `package.json` 的 scripts 已自动把该目录加入 PATH，无需手动配置。
-  > 建议把该目录移到稳定位置（如 `~/tools/node26`）并全局加入 PATH，避免清理 Downloads 后失效。
 - 包管理器使用 pnpm（Cloudflare 构建使用 v9.10，本地 v12 亦可，`pnpm-workspace.yaml` 兼容两者）。
 
 ## 本地运行

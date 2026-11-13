@@ -7,11 +7,11 @@
     "node": ">=22.23.4"
   },
   "scripts": {
-    "dev": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro dev",
-    "build": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro build",
-    "preview": "PATH=\"$HOME/Downloads/node-v26.0.0-darwin-arm64/bin:$PATH\" astro preview",
-    "migrate": "node scripts/migrate.mjs",
-    "sidebar": "node scripts/generate-sidebar.mjs"
+    "dev": "PATH=\"$HOME/tools/node26/bin:$PATH\" astro dev",
+    "build": "PATH=\"$HOME/tools/node26/bin:$PATH\" astro build",
+    "preview": "PATH=\"$HOME/tools/node26/bin:$PATH\" astro preview",
+    "migrate": "PATH=\"$HOME/tools/node26/bin:$PATH\" node scripts/migrate.mjs",
+    "sidebar": "PATH=\"$HOME/tools/node26/bin:$PATH\" node scripts/generate-sidebar.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.42.9",
