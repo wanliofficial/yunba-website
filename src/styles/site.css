@@ -41,6 +41,9 @@ body.site {
 	vertical-align: middle;
 }
 
+/* 页面主容器。注意：与 .container 写在同一个元素上的类（hero-inner /
+   article-body / company-layout）若使用简写 padding，会把它左右 20px 的
+   内边距重置为 0，导致内容贴屏；这些类必须显式写出左右值。 */
 .container {
 	max-width: 1170px;
 	margin: 0 auto;
@@ -107,7 +110,7 @@ body.site {
 	display: flex;
 	align-items: center;
 	gap: 40px;
-	padding: 40px 0 0;
+	padding: 40px 20px 0;
 }
 
 .hero-text {
@@ -569,14 +572,14 @@ body.site {
 .notice-bar {
 	background: #fff8e6;
 	border-bottom: 1px solid #f5e6bf;
-	padding: 10px 0;
+	padding: 10px 20px;
 	font-size: 13px;
 	color: #8a6d1a;
 	text-align: center;
 }
 
 .article-body {
-	padding: 50px 0;
+	padding: 50px 20px;
 }
 
 .article-body h3 {
@@ -751,7 +754,7 @@ body.site {
 .company-layout {
 	display: flex;
 	gap: 48px;
-	padding: 48px 0;
+	padding: 48px 20px;
 }
 
 .company-side {
@@ -1099,7 +1102,7 @@ body.site {
 		padding: 40px 0;
 	}
 	.article-body {
-		padding: 36px 0;
+		padding: 36px 20px;
 	}
 	.page-hero {
 		padding: 40px 0;
@@ -1201,6 +1204,14 @@ body.site {
 	.container {
 		padding: 0 14px;
 	}
+	.article-body {
+		padding: 28px 14px;
+	}
+	.company-layout,
+	.hero-inner {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
 	.hero-text h1,
 	.hero-text h2 {
 		font-size: 22px;
@@ -1210,9 +1221,6 @@ body.site {
 	}
 	.section {
 		padding: 32px 0;
-	}
-	.article-body {
-		padding: 28px 0;
 	}
 	.page-hero {
 		padding: 32px 0;
