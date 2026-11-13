@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap 地址与 astro.config.mjs 中的 site 保持一致；更换部署域名时需同步修改
+Sitemap: https://yunba.github.io/sitemap-index.xml
